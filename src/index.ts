@@ -1,4 +1,3 @@
-import type { BaseNode } from 'estree-walker'
 import { walk } from 'estree-walker'
 import MagicString from 'magic-string'
 import { createFilter } from '@rollup/pluginutils'
@@ -74,7 +73,8 @@ export const unpluginFactory: UnpluginFactory<Options | undefined> = (options = 
       let ast
 
       try {
-        ast = this.parse(code)
+        // FIXME
+        ast = this.parse(code) as any
       }
       catch (err: any) {
         err.message += ` in ${id}`
@@ -89,7 +89,7 @@ export const unpluginFactory: UnpluginFactory<Options | undefined> = (options = 
         magicString.remove(start, end)
       }
 
-      function isBlock(node: BaseNode) {
+      function isBlock(node: any) {
         return node && (node.type === 'BlockStatement' || node.type === 'Program')
       }
 
