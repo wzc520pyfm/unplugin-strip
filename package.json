@@ -3,7 +3,7 @@
   "type": "module",
   "version": "0.1.0",
   "packageManager": "pnpm@8.6.12",
-  "description": "",
+  "description": "A universal bundler plugin to remove `debugger` statements and functions like `assert.equal` and `console.log` from your code.",
   "license": "MIT",
   "homepage": "https://github.com/wzc520pyfm/unplugin-strip#readme",
   "repository": {
